@@ -22,7 +22,7 @@ def get_yield_stress():
 
 def predict_apps(h,t,d,ys):
     loaded_model = pickle.load(open('mini_project_model.pkl','rb'))
-    new_data = np.([[float(h),float(t),float(d),float(ys)]])
+    new_data = np.array([[float(h),float(t),float(d),float(ys)]])
     prediction = loaded_model.predict(new_data)
     st.write("Prediction with new data: ")
     st.write(prediction)
