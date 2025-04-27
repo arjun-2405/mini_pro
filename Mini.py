@@ -25,9 +25,7 @@ def predict_apps(h,t,d,ys):
     new_data = np.array([[float(h),float(t),float(d),float(ys)]])
     prediction = loaded_model.predict(new_data)
     st.write("Prediction with new data: ")
-    st.write(prediction)
-    predicted_classes = np.argmax(prediction, axis=1)
-    print("Predicted Classes:", predicted_classes)
+    st.write(f"Predicted class: {prediction[0]}")
     
 
 
