@@ -4,4 +4,4 @@ tensorflow
 numpy
 pandas
 seaborn
-sklearn
+
