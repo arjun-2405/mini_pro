@@ -26,7 +26,9 @@ def predict_apps(h,t,d,ys):
     prediction = loaded_model.predict(new_data)
     st.write("Prediction with new data: ")
     predicted_classes = np.argmax(prediction, axis=1)
-    st.write(predicted_classes)
+    predicted_class_index = predicted_classes[0]  # Get the predicted class index
+    predicted_class_name = le.classes_[predicted_class_index]
+    st.write(predicted_class_name)
 
 
 
