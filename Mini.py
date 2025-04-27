@@ -1,10 +1,8 @@
 import streamlit as st
 import pickle
 import numpy as np
-from sklearn import preprocessing
 
-
-le = LabelEncoder()
+class_names = {0: "AEROSPACE", 1: "AUTOMOTIVE", 2: "DOMESTIC", 3: "INDUSTRY"}
 
 def get_hardness():
     hardness = st.text_input("HARDNESS")
@@ -29,10 +27,10 @@ def predict_apps(h,t,d,ys):
     new_data = np.array([[float(h),float(t),float(d),float(ys)]])
     prediction = loaded_model.predict(new_data)
     st.write("Prediction with new data: ")
-    predicted_classes = np.argmax(prediction, axis=1)
-    predicted_class_index = predicted_classes[0]  # Get the predicted class index
-    predicted_class_name = le.classes_[predicted_class_index]
-    st.write(predicted_class_name)
+    predicted_class = int(prediction[0])
+    material_name = class_names[predicted_class]
+
+    st.success(f"Predicted Material: {material_name}")
 
 
 
