@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
+from sklearn import preprocessing
 
 
 le = LabelEncoder()
