@@ -27,7 +27,7 @@ def predict_apps(h,t,d,ys):
     new_data = np.array([[float(h),float(t),float(d),float(ys)]])
     prediction = loaded_model.predict(new_data)
     st.write("Prediction with new data: ")
-    predicted_class = int(prediction[0])
+    predicted_class = int(prediction.flatten()[0])
     material_name = class_names[predicted_class]
 
     st.success(f"Predicted Material: {material_name}")
