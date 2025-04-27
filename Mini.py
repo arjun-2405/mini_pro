@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import numpy as np
 
+le = LabelEncoder()
+
 def get_hardness():
     hardness = st.text_input("HARDNESS")
     return hardness
